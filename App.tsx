@@ -117,7 +117,7 @@ const App: React.FC = () => {
 
     saveIngredients([...ingredients, ingredient]);
     setIsAddModalVisible(false);
-    setNewIngredient({name: '', expiryDays: '7', notes: '', imageUri: ''});
+    setNewIngredient({name: '', expiryDays: '', notes: '', imageUri: ''});
   };
 
   const removeIngredient = (id: string) => {
@@ -145,7 +145,7 @@ const App: React.FC = () => {
       <ScrollView contentContainerStyle={styles.scrollContent}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>My Virtual Fridge</Text>
+          <Text style={styles.title}>fridge</Text>
         </View>
 
         {/* Fridge Container */}
@@ -167,7 +167,7 @@ const App: React.FC = () => {
                     <View style={styles.stickyNoteHeader}>
                       <Text style={styles.stickyNoteTitle}>⚠️ Expiring Soon!</Text>
                     </View>
-                    <View style={styles.stickyNoteContent}>
+                    <View style={styles.stickyNoteContent}> 
                       {expiringItems.slice(0, 4).map((item, _index) => {
                         const daysLeft = differenceInDays(item.expiryDate, new Date());
                         return (
